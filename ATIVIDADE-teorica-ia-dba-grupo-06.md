@@ -302,8 +302,47 @@ Dessa forma, o grupo entende que é possível aproveitar os ganhos de produtivid
 
 ## 2. Exemplos e Casos
 
-Exemplo de view `clientes_visiveis` no PostgreSQL e exemplo de role/permissão.
-Um caso real: sistema de vendas, clínica ou biblioteca.
+Imagine um sistema de clínica médica, a equipe de recepção deve consultar dados de contato dos pacientes, mas não deve ter acesso aos prontuários médicos sensíveis.
+
+```
+
+//Cria uma tabela um tipo pacientes
+CREATE TABLE pacientes (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) UNIQUE NOT NULL,
+    telefone VARCHAR(20),
+    prontuario_medico TEXT,
+    ativo BOOLEAN DEFAULT TRUE
+);
+
+//Cadastra exemplos de pacientes
+INSERT INTO pacientes (nome, cpf, telefone, prontuario_medico, ativo) VALUES
+('Ana Silva', '111.222.333-44', '(11) 98765-4321', 'Histórico de hipertensão leve.', TRUE),
+('Carlos Souza', '555.666.777-88', '(11) 91234-5678', 'Paciente em acompanhamento dermatológico.', TRUE),
+('Marcos Lima', '999.888.777-66', '(11) 97777-8888', 'Cadastro inativado a pedido.', FALSE);
+
+//Cria visão somente para o pacientes ativos e oculta o prontuário
+CREATE VIEW clientes_visiveis AS
+SELECT 
+    id,
+    nome,
+    telefone,
+    ativo
+FROM pacientes
+WHERE ativo = TRUE;
+
+//Cria o grupo para o pessoal da recepção
+CREATE ROLE recepcao;
+
+//Concede o acesso da visão clientes_visiveis para o grupo recepcao
+GRANT SELECT ON clientes_visiveis TO recepcao_group;
+
+//Cria o usuário para a atendente maria e coloca ela no respectivo grupo
+CREATE USER atendente_maria WITH PASSWORD 'SenhaSegura123!';
+GRANT recepcao_group TO atendente_maria;
+
+```
 
 ## 3. Referências
 
