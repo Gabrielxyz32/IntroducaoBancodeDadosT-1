@@ -306,7 +306,7 @@ Imagine um sistema de clínica médica, a equipe de recepção deve consultar da
 
 ```
 
-//Cria uma tabela um tipo pacientes
+//Cria uma tabela do tipo pacientes
 CREATE TABLE pacientes (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
