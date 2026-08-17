@@ -7,7 +7,7 @@
 
 ## Resumo Executivo
 
-Breve descrição do tema e da posição adotada pelo grupo.
+A inteligência artificial é muitas vezes utilizada por usuários especialistas em bancos de dados, isso pode trazer riscos para os dados armazenados e a integridade do banco, essa pesquisa tem o objetivo de explicar como o uso da IA por esses usuários pode ser feito, quais os riscos e quais medidas devem ser tomadas para amenizar esses riscos, quais tipos de usuários tem acesso a o banco de dados, e o que é um administrador do banco de dados (BDA) e qual seu papel nessa situação.
 
 ## 1. Desenvolvimento Teórico
 
@@ -370,6 +370,8 @@ DSA, Equipe . Qual a Importância de Um DBA (Database Administrator) em Projetos
 
 ## 4. Conclusões
 
-Aprendizados, reflexões e principais pontos observados pelo grupo.
+A partir dessa pesquisa é possível concluir que a inteligencia artificial vem sendo cada vez mais utilizada para a manipulação, análise e gerenciamento de banco de dados, porém, esse uso pode apresentar riscos quando é feito sem a devida responsabilidade. A falta de privacidade, o vazamento de dados, consultas incorretas, consumo de recursos, são alguns dos riscos apresentados quando há o uso de IA por usuários especialistas mal intencionados, irresponsáveis, ou sem o devido treinamento.
+
+Portanto, para evitar esses riscos é necessário a tomada de medidas de segurança, como a limitação do acesso de cada usuário ao banco de dados, e o controle de desempenho e auditoria por parte do DBA. Além disso, os usuários especialistas devem ser orientados a utilizar a IA como uma ferramenta auxiliar de forma minunciosa, sempre questionando seus resultados e tendo uma limitação em relação as operações que podem ser realizadas por IA. A inteligência Artificial pode ser usada como uma ferramenta de apoio por parte dos usuários se usada de forma correta, pode auxiliar o desempenho e a navegação de um usuário, contanto que seja usada de forma consciente e monitorada, sem um exagero de liberdades.
 
 ## Link do Repositório Git
